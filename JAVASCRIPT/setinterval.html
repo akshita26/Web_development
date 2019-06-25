@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>SetInterval and setTimeout</title>
+</head>
+<body>
+    <p id="counter">0</p>
+    <button onclick="clearInterval(mycounter)">Stop counting</button>
+    <button onclick="clearTimeout(delayedmsg)">Avoid welcome message</button>
+    <script>
+        
+        var counter = document.getElementById("counter");
+        var x=0;
+        var mycounter= setInterval(function(){x++;counter.innerHTML=x},1000);
+        var delayedmsg= setTimeout(function(){window.alert("Welcome to our page!")},5000);
+    </script>
+</body>    
+</html>
