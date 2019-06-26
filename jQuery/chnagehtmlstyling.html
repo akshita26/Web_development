@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<HTML>
+<head>
+    <meta charset="utf-8">
+    <title>change html content</title>
+    <style>
+        .bluebox{
+            background-color: #3A5795;
+            color: antiquewhite;
+            height: 100px;
+            width: 300px;
+        }
+         .yellowbox{
+            background-color: yellow;
+            color: black;
+            height: 100px;
+            width: auto;
+        }
+         .greenbox{
+            background-color:limegreen;
+            color: antiquewhite;
+            height: 100px;
+            width: auto;
+        }
+        .great{
+            color: red;
+            font-style: italic;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <button id="changefb">Change facebook</button>
+        <button id="changeapple">Change apple</button>
+        <button id="changemicrosoft">Change microsoft</button>
+        <button id="showmicrosoft">Show microsoft</button>
+        <div class="bluebox" id="facebook">
+       <p>Facebook is <span class="great">great</span></p>
+        </div>
+         <div class="yellowbox" id="apple">
+       <p>Apple</p>
+        </div>
+         <div class="greenbox" id="microsoft">
+       <p id="microsoftpara">Microsoft</p>
+             <p><a href="http://www.microsoft.com" title="microsoft" id="microsoftlink">Microsoft Link</a></p>
+        </div>
+        <p>Enter your name: <input></p>
+     </body>
+        <script>             
+            $(function(){
+              $("#changefb").click(function(){
+             $("#facebook").css("width",100*Math.random() -50 + $("#facebook").width()); 
+            $("#facebook").addClass("greenbox");
+                  
+              });
+                $("#apple").click(function(){
+       //      $("#apple").removeClass("yellowbox"); 
+           $("#apple").css("position","absolute");
+             $("#apple").css({'top':200*Math.random(), 'left':200*Math.random(), 'background-color':'rgb('+ Math.floor(256*Math.random())+','+ Math.floor(256*Math.random())+','+ Math.floor(256*Math.random())+')' });
+              });
+                $("#changemicrosoft").click(function(){
+             $("#microsoft").toggleClass("greenbox");  
+                });
+                $("#microsoft").dblclick(function(){
+                    $(this).hide();
+                });
+                 $("#showmicrosoft").click(function(){
+                    $("#microsoft").show();
+                });
+                
+            });
+    </script>
+    
+</HTML>
